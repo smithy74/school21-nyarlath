@@ -14,7 +14,7 @@ typedef struct matrix_struct {
 #define SUCCESS 1
 #define FAILURE 0
 
-enum { OK = 0, INCORRECT = 1, CALC_ERROR = 2};
+enum { OK = 0, INCORRECT = 1, CALC_ERROR = 2 };
 
 // вывод марицы
 // void s21_print_matrix(matrix_t *result);

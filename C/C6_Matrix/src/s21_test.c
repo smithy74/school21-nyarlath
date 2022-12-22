@@ -59,19 +59,17 @@ START_TEST(test_s21_sum_matrix) {
   matrix_t A, B, res, res_org;
   s21_create_matrix(5, 5, &A);
   s21_create_matrix(5, 5, &B);
-  s21_create_matrix(5, 5, &res);
   int ret = s21_sum_matrix(&A, &B, &res);
   ck_assert_int_eq(ret, OK);
   s21_remove_matrix(&B);
+  s21_remove_matrix(&res);
 
   s21_create_matrix(6, 6, &B);
-  s21_create_matrix(5, 5, &res);
   ret = s21_sum_matrix(&A, &B, &res);
   ck_assert_int_eq(ret, CALC_ERROR);
   s21_remove_matrix(&A);
 
   s21_create_matrix(6, 6, &B);
-  s21_create_matrix(5, 5, &res);
   ret = s21_sum_matrix(&A, &B, &res);
   ck_assert_int_eq(ret, INCORRECT);
   s21_remove_matrix(&A);
@@ -101,19 +99,17 @@ START_TEST(test_s21_sub_matrix) {
   matrix_t A, B, res, res_org;
   s21_create_matrix(5, 5, &A);
   s21_create_matrix(5, 5, &B);
-  s21_create_matrix(5, 5, &res);
   int ret = s21_sub_matrix(&A, &B, &res);
   ck_assert_int_eq(ret, OK);
   s21_remove_matrix(&B);
+  s21_remove_matrix(&res);
 
   s21_create_matrix(6, 6, &B);
-  s21_create_matrix(5, 5, &res);
   ret = s21_sub_matrix(&A, &B, &res);
   ck_assert_int_eq(ret, CALC_ERROR);
   s21_remove_matrix(&A);
 
   s21_create_matrix(6, 6, &B);
-  s21_create_matrix(5, 5, &res);
   ret = s21_sub_matrix(&A, &B, &res);
   ck_assert_int_eq(ret, INCORRECT);
   s21_remove_matrix(&A);
