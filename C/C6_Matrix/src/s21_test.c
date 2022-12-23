@@ -68,6 +68,7 @@ START_TEST(test_s21_sum_matrix) {
   ret = s21_sum_matrix(&A, &B, &res);
   ck_assert_int_eq(ret, CALC_ERR);
   s21_remove_matrix(&A);
+  s21_remove_matrix(&B);
 
   s21_create_matrix(6, 6, &B);
   ret = s21_sum_matrix(&A, &B, &res);
@@ -108,6 +109,7 @@ START_TEST(test_s21_sub_matrix) {
   ret = s21_sub_matrix(&A, &B, &res);
   ck_assert_int_eq(ret, CALC_ERR);
   s21_remove_matrix(&A);
+  s21_remove_matrix(&B);
 
   s21_create_matrix(6, 6, &B);
   ret = s21_sub_matrix(&A, &B, &res);
@@ -138,7 +140,6 @@ END_TEST
 START_TEST(test_s21_mult_number) {
   matrix_t A, res, res_org;
   s21_create_matrix(5, 5, &A);
-  s21_create_matrix(5, 5, &res);
   s21_create_matrix(5, 5, &res_org);
   for (int i = 0; i < 5; i++) {
     for (int j = 0; j < 5; j++) {
