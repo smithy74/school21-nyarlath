@@ -14,7 +14,10 @@ typedef struct matrix_struct {
 #define SUCCESS 1
 #define FAILURE 0
 
-enum { OK = 0, INCORRECT = 1, CALC_ERROR = 2 };
+#define OK 0
+#define INCORRECT 1
+#define CALC_ERR 2
+#define MEMBER_ERR 3
 
 // вывод марицы
 // void s21_print_matrix(matrix_t *result);
@@ -53,5 +56,8 @@ void s21_get_minor(int row, int col, matrix_t *A, matrix_t *result);
 
 // Обратная матрица (inverse_matrix)
 int s21_inverse_matrix(matrix_t *A, matrix_t *result);
+
+// Проверка на пустату
+int s21_is_Emty(matrix_t *matrix);
 
 #endif  // SRC_S21_MATRIX_H

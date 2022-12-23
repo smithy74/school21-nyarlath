@@ -6,10 +6,8 @@ OS := $(shell uname)
 
 ifeq ($(OS), Linux)  # Linux
 	ADD_LIB = -lcheck -lm -lpthread -lrt -lsubunit
-	BREW := .
 else
 	ADD_LIB = -lcheck -lm -lpthread
-	BREW := ${HOME}/homebrew
 endif
 
 PROJECTNAME=s21_matrix
